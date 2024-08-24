@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 3,
     elevation: 5,
+    
   },
   btnText: {
     fontSize: 15,
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderBottomWidth: 1,
-    borderBottomColor: '#b0bec5', // Cor da borda do input (Secundária)
+    borderBottomColor: '#fff', // Cor da borda do input (Secundária)
     width: '100%',
     marginBottom: 20,
     fontSize: 16,
@@ -85,30 +86,34 @@ const styles = StyleSheet.create({
   },
   cancelBtn: {
     flex: 1,
-    backgroundColor: '#d32f2f',
+    backgroundColor: '#fff',
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 17,
     alignItems: 'center',
     marginLeft: 5,
+    borderWidth: 2,
+    borderColor: '#d32f2f',
   },
   cancelBtnText: {
     fontSize: 16,
-    color: '#ffffff',
+    color: '#d32f2f',
     fontWeight: 'bold',
   },
   addBtn: {
     flex: 1,
-    backgroundColor: '#388e3c',
+    backgroundColor: '#fff',
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 17,
     alignItems: 'center',
     marginRight: 5,
+    borderWidth: 2,
+    borderColor: '#388e3c',
   },
   addBtnText: {
     fontSize: 16,
-    color: '#ffffff',
+    color: '#388e3c',
     fontWeight: 'bold',
   },
 });

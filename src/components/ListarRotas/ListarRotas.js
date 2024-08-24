@@ -83,8 +83,8 @@ export default function ListarRotas({ navigation }) {
   const renderRouteItem = ({ item }) => (
     <View style={styles.routeItem}>
       <View style={styles.routeHeader}>
-        <FontAwesome name="road" size={24} color="#FF5722" />
-        {editingRouteId === item.id ? (
+      <FontAwesome name="map" size={15} color="#fff" />  
+      {editingRouteId === item.id ? (
           <TextInput
             style={styles.routeNameInput}
             value={newRouteName}
@@ -126,7 +126,7 @@ export default function ListarRotas({ navigation }) {
   if (loading) {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" color="#FF5722" />
+        <ActivityIndicator size="large" color="#102c5e" />
         <StatusBar style="auto" />
       </View>
     );

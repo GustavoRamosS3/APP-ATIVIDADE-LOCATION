@@ -4,7 +4,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow MyApp to use your location."
+          "locationAlwaysAndWhenInUsePermission": "Allow APP-ATIVIDADE-LOCATION to use your location."
         }
       ]
     ],
@@ -22,12 +22,16 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
+      "android": {
+        "permissions": [
+          "ACCESS_FINE_LOCATION",
+          "ACCESS_COARSE_LOCATION"
+        ],
+        "adaptiveIcon": {
+          "foregroundImage": "./assets/adaptive-icon.png",
+          "backgroundColor": "#ffffff"
+        }
+  },
     "web": {
       "favicon": "./assets/favicon.png"
     }

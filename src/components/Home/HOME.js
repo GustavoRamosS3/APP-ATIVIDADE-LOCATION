@@ -239,7 +239,7 @@ const Home = () => {
   <View style={styles.inputContainer}>
     <TextInput
       style={styles.input}
-      placeholder="Nome da rota"
+      placeholder="Digite o nome da rota"
       value={routeName}
       onChangeText={setRouteName}
     />

@@ -8,14 +8,14 @@ export default StyleSheet.create({
     paddingTop: 20,
   },
   routeItem: {
-    backgroundColor: '#ffffff', // Cor de fundo dos itens de rota
+    backgroundColor: '#102c5e', // Cor de fundo dos itens de rota
     padding: 20,
     marginVertical: 10,
     marginHorizontal: 5,
     borderRadius: 15,
     elevation: 8,
     borderColor: '#b0bec5', // Cor da borda dos itens
-    borderWidth: 1,
+    borderWidth: 2,
     overflow: 'hidden',
     position: 'relative',
   },
@@ -27,49 +27,56 @@ export default StyleSheet.create({
   routeName: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#37474f', // Cor do texto do nome da rota (primária)
+    color: '#fff', // Cor do texto do nome da rota (primária)
     marginLeft: 10,
     letterSpacing: 0.5,
   },
   routeDetails: {
     fontSize: 16,
-    color: '#607d8b', // Cor do texto dos detalhes (secundária)
+    color: '#fff', // Cor do texto dos detalhes (secundária)
     marginBottom: 5,
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     marginTop: 10,
+    
   },
   editButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    backgroundColor: '#4caf50', // Verde para o botão de edição
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    backgroundColor: '#102c5e', // Verde para o botão de edição
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#4caf50',
+    marginLeft: 5,
+    marginRight: 5,
   },
   deleteButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    backgroundColor: '#f44336', // Vermelho para o botão de deletar
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    backgroundColor: '#102c5e', // Vermelho para o botão de deletar
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#f44336',
+    marginLeft: 5,
   },
   viewButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    backgroundColor: '#2196f3', // Azul para o botão de ver rota
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    backgroundColor: '#102c5e', // Azul para o botão de ver rota
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#2196f3',
+    marginRight: 5,
+    
+
   },
   buttonText: {
     color: '#ffffff', // Texto branco para contraste

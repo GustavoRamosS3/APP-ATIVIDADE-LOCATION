@@ -1,48 +1,34 @@
-import { PermissionsAndroid, Platform, Alert } from 'react-native';
-import Geolocation from 'react-native-geolocation-service';
+import * as Location from 'expo-location';
+import { Alert } from 'react-native';
 
 const requestLocationPermission = async () => {
-  if (Platform.OS === 'android') {
-    try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-        {
-          title: "Location Permission",
-          message: "This app needs access to your location.",
-          buttonNeutral: "Ask Me Later",
-          buttonNegative: "Cancel",
-          buttonPositive: "OK",
-        }
-      );
-      return granted === PermissionsAndroid.RESULTS.GRANTED;
-    } catch (err) {
-      console.warn(err);
+  try {
+    const { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted') {
+      Alert.alert("Location permission denied");
       return false;
     }
+    return true;
+  } catch (err) {
+    console.warn('Error requesting location permission:', err);
+    return false;
   }
-  // No permission needed for iOS in this example
-  return true;
 };
 
-const GetCurrentLocation = async () => {
+const getCurrentLocation = async () => {
   const hasPermission = await requestLocationPermission();
-  
-  if (!hasPermission) {
-    Alert.alert("Location permission denied");
-    return;
-  }
 
-  Geolocation.getCurrentPosition(
-    (position) => {
-      const { latitude, longitude } = position.coords;
-      console.log("Latitude:", latitude);
-      console.log("Longitude:", longitude);
-    },
-    (error) => {
-      console.error("Error getting location:", error);
-    },
-    { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-  );
+  if (!hasPermission) return;
+
+  try {
+    const { coords } = await Location.getCurrentPositionAsync({ enableHighAccuracy: true });
+    const { latitude, longitude } = coords;
+    console.log("Latitude:", latitude);
+    console.log("Longitude:", longitude);
+  } catch (error) {
+    console.error("Error getting location:", error);
+  }
 };
 
-export default GetCurrentLocation;
+export default getCurrentLocation;
+
