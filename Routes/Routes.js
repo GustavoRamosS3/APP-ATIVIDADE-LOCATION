@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Text } from 'react-native'; 
+import { Text } from 'react-native';
 import 'react-native-get-random-values';
 import Home from '../src/components/Home/HOME.js';
 import ListarRotas from '../src/components/ListarRotas/ListarRotas.js';
 import ExibirRotas from '../src/components/ExibirRotas/ExibirRotas.js'; 
 import GetCurrentLocation from '../src/main/PermissionsAndroid.js';
 
-const Tabs = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 export default function Routes() {
   useEffect(() => {
@@ -16,9 +16,8 @@ export default function Routes() {
   }, []);
 
   return (
-    <Tabs.Navigator
+    <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerShown: false,
         tabBarLabelStyle: { fontSize: 14 },
         tabBarIcon: ({ color, size, focused }) => {
           let iconName;
@@ -54,13 +53,15 @@ export default function Routes() {
         },
         tabBarStyle: {
           backgroundColor: '#102c5e', // Cor de fundo do menu (Primária)
-          borderTopColor: '#eceff1', // Cor do topo da barra de navegação
+        },
+        tabBarIndicatorStyle: {
+          backgroundColor: '#fff', // Cor do indicador de aba
         },
       })}
     >
-      <Tabs.Screen name="Home" component={Home} />
-      <Tabs.Screen name="Lista Rotas" component={ListarRotas} />
-      <Tabs.Screen name="Exibir Rotas" component={ExibirRotas} />
-    </Tabs.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Lista Rotas" component={ListarRotas} />
+      <Tab.Screen name="Exibir Rotas" component={ExibirRotas} />
+    </Tab.Navigator>
   );
 }
