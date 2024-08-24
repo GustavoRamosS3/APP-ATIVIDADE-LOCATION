@@ -5,23 +5,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end', // Mantém o menu na parte inferior
-    backgroundColor: '#eceff1', // Fundo suave e elegante
+
   },
   mapContainer: {
     flex: 1, // O mapa ocupa o espaço disponível acima do menu
     width: '100%',
-    borderTopLeftRadius: 20, // Bordas arredondadas no topo
-    borderTopRightRadius: 20, 
     overflow: 'hidden',
-    marginBottom: 10, // Margem para separar do menu
   },
   map: {
     width: '100%',
     height: '100%',
   },
   menuContainer: {
-    backgroundColor: '#37474f', // Cor de fundo do menu (Primária)
-    paddingVertical: 15,
+    backgroundColor: '#102c5e', // Cor de fundo do menu (Primária)
+    paddingVertical: 5,
     paddingHorizontal: 20,
     alignItems: 'center',
     borderTopLeftRadius: 20,
@@ -34,25 +31,38 @@ const styles = StyleSheet.create({
   recordingContainer: {
     alignItems: 'center',
     marginBottom: 10,
+    color: '#fff'
+  },
+  recordingText: {
+    color: '#ffffff',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   btn: {
-    backgroundColor: '#ffab91', // Cor do botão (Ação)
-    borderRadius: 25,
-    paddingVertical: 14,
-    paddingHorizontal: 30,
+    backgroundColor: '#fff', // Cor do botão (Ação)
+    borderRadius: 18,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
     marginBottom: 10,
+    marginTop: 3,
     elevation: 5,
   },
   btnText: {
-    fontSize: 18,
-    color: '#ffffff', // Texto branco para contraste
+    fontSize: 15,
+    color: '#102c5e',
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  
   inputContainer: {
     backgroundColor: '#ffffff',
     borderRadius: 10,
@@ -74,11 +84,13 @@ const styles = StyleSheet.create({
     color: '#37474f', // Texto com a cor primária
   },
   cancelBtn: {
-    backgroundColor: '#d32f2f', // Cor do botão de cancelar (Vermelho)
+    flex: 1,
+    backgroundColor: '#d32f2f',
     borderRadius: 5,
     paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginBottom: 10,
+    paddingHorizontal: 17,
+    alignItems: 'center',
+    marginLeft: 5,
   },
   cancelBtnText: {
     fontSize: 16,
@@ -86,10 +98,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   addBtn: {
-    backgroundColor: '#388e3c', // Cor do botão de adicionar (Verde Escuro)
+    flex: 1,
+    backgroundColor: '#388e3c',
     borderRadius: 5,
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 17,
+    alignItems: 'center',
+    marginRight: 5,
   },
   addBtnText: {
     fontSize: 16,

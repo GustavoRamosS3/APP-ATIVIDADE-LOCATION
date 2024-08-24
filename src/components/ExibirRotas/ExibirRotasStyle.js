@@ -7,7 +7,10 @@ export default StyleSheet.create({
     backgroundColor: '#eceff1', // Cor de fundo mais clara
   },
   map: {
-    flex: 1,
+    flex: 1, // O mapa ocupa o espaço disponível acima do menu
+    width: '100%',
+    overflow: 'hidden',
+
   },
   errorText: {
     color: 'red',

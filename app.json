@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow MyApp to use your location."
+        }
+      ]
+    ],
     "name": "app-geo",
     "slug": "app-geo",
     "version": "1.0.0",

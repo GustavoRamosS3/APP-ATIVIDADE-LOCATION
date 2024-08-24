@@ -39,8 +39,8 @@ const ExibirRotas = () => {
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: -15.7801,
-          longitude: -47.9292,
+          latitude: -23.0996,
+          longitude: -47.7143,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
@@ -49,7 +49,7 @@ const ExibirRotas = () => {
           <Polyline
             key={route.id}
             coordinates={route.coords}
-            strokeColor="#FF5722"
+            strokeColor="#254b59"
             strokeWidth={4}
           />
         ))}

@@ -75,7 +75,7 @@ const Home = () => {
     const watcher = await Location.watchPositionAsync(
       {
         accuracy: Location.Accuracy.High,
-        distanceInterval: 1,
+        distanceInterval: 0.5,
       },
       (newLocation) => {
         setLocation(newLocation.coords);
@@ -86,7 +86,7 @@ const Home = () => {
               lastCoord.latitude, lastCoord.longitude,
               newLocation.coords.latitude, newLocation.coords.longitude
             );
-            if (distanceMoved >= 0.001) {
+            if (distanceMoved >= 0.0005) {
               return [...prevCoords, newLocation.coords];
             }
           } else {
@@ -230,28 +230,30 @@ const Home = () => {
 
         {isRecording && (
           <View style={styles.recordingContainer}>
-            <Text>Tempo: {Math.floor(routeTime / 60)}:{('0' + (routeTime % 60)).slice(-2)}</Text>
-            <Text>Distância: {routeDistance.toFixed(2)} km</Text>
+            <Text style={styles.recordingText}>Tempo: {Math.floor(routeTime / 60)}:{('0' + (routeTime % 60)).slice(-2)}</Text>
+            <Text style={styles.recordingText}>Distância: {routeDistance.toFixed(2)} km</Text>
           </View>
         )}
 
-        {/* Input para nome da rota */}
-        {inputVisible && (
-          <View style={styles.inputContainer}>
-            <TextInput
-              style={styles.input}
-              placeholder="Nome da rota"
-              value={routeName}
-              onChangeText={setRouteName}
-            />
-            <TouchableOpacity style={styles.cancelBtn} onPress={handleCancel}>
-              <Text style={styles.cancelBtnText}>Cancelar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.addBtn} onPress={handleSaveRoute}>
-              <Text style={styles.addBtnText}>Adicionar</Text>
-            </TouchableOpacity>
-          </View>
-        )}
+{inputVisible && (
+  <View style={styles.inputContainer}>
+    <TextInput
+      style={styles.input}
+      placeholder="Nome da rota"
+      value={routeName}
+      onChangeText={setRouteName}
+    />
+    <View style={styles.buttonContainer}>
+      <TouchableOpacity style={styles.addBtn} onPress={handleSaveRoute}>
+        <Text style={styles.addBtnText}>Adicionar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.cancelBtn} onPress={handleCancel}>
+        <Text style={styles.cancelBtnText}>Cancelar</Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+)}
+
       </View>
     </View>
   );
